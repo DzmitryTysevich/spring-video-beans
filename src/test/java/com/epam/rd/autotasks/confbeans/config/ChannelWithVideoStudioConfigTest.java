@@ -82,5 +82,4 @@ class ChannelWithVideoStudioConfigTest {
                 studio.produce()
         );
     }
-
 }
