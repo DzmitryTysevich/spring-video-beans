@@ -55,7 +55,6 @@ class ChannelWithVideoStudioConfigTest {
     void testChannelPubTimes() {
         assertEquals(
                 Set.of(
-
                         "2001-10-18T10:00",
                         "2003-10-18T10:00",
                         "2005-10-18T10:00",

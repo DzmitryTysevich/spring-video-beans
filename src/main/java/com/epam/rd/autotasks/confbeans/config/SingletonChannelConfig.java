@@ -4,14 +4,12 @@ import com.epam.rd.autotasks.confbeans.video.Channel;
 import com.epam.rd.autotasks.confbeans.video.Video;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import java.time.LocalDateTime;
 
 @Configuration
-@ComponentScan("com.epam.rd.autotasks.confbeans.config")
 @PropertySource("classpath:configResources.properties")
 public class SingletonChannelConfig {
     @Value("${video1.name}")

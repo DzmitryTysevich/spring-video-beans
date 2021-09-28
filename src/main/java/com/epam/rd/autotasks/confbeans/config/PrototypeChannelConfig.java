@@ -8,7 +8,6 @@ import org.springframework.context.annotation.*;
 import java.time.LocalDateTime;
 
 @Configuration
-@ComponentScan("com.epam.rd.autotasks.confbeans.config")
 @PropertySource("classpath:configResources.properties")
 public class PrototypeChannelConfig {
     @Value("${video1.name}")
