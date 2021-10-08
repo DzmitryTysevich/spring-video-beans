@@ -5,8 +5,10 @@ import com.epam.rd.autotasks.confbeans.video.Video;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 import java.time.LocalDateTime;
 
@@ -20,22 +22,20 @@ public class ChannelWithInjectedPrototypeVideoConfig {
     private final LocalDateTime localDateTime = LocalDateTime.of(2001, 10, 1, 10, 0);
 
     @Bean
-    @Scope("prototype")
+    @Scope(scopeName = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
     public Channel channel() {
-        return getChannel();
-    }
-
-    private Channel getChannel() {
         Channel channel = new Channel();
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 2; i++) {
             channel.addVideo(video());
             channel.addVideo(otherVideo());
             channel.addVideo(anotherOtherVideo());
         }
+        channel.addVideo(video());
         return channel;
     }
 
     @Bean
+    @Primary
     @Scope("prototype")
     public Video video() {
         return getVideo();
