@@ -82,5 +82,4 @@ class SingletonChannelConfigTest {
 
         assertSame(channel, channelShadow);
     }
-
 }

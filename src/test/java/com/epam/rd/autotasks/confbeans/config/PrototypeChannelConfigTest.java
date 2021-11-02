@@ -84,5 +84,4 @@ class PrototypeChannelConfigTest {
         assertEquals(channel, channelShadow);
         assertNotSame(channel, channelShadow);
     }
-
 }

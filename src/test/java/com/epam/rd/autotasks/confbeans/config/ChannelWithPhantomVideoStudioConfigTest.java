@@ -88,5 +88,4 @@ class ChannelWithPhantomVideoStudioConfigTest {
 
         assertEquals(expectedNextReleases, Set.of(nextRelease, nextNextRelease));
     }
-
 }
